@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Copy buttons example</title>
+    <title>Copy buttons</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<p id="textToCopy">Here's the text I would like to copy</p>
-<div data-copy-button="copyButton" data-copy-button-target="#textToCopy">Click to copy</div>
+<div class="container">
+    <h1>Copy Buttons Demo</h1>
+    <p>This page is intended as a simple demo showing how to import and use Copy Buttons. Check out this page's source.</p>
+    <p>For more details, see the project's <a href="https://github.com/willfirman/copyButtons/blob/master/README.md">readme</a>.</p>
+    <p>Here's a code snippet, and a button which copies it to your clipboard</p>
+    <div>
+        <code id="some_code">console.log('Hello world');</code>
+        <a role="button" class="btn btn-sm btn-outline-secondary" data-copy-button="copyButton" data-copy-button-target="#some_code">Copy</a>
+    </div>
+</div>
 <script type="module">
-    import {COPY_BUTTON_TEXT, copyButtonsSetup} from './copy_buttons.js';
+    import {copyButtonsSetup} from './copy_buttons.js';
     // Configuring the success and failure text - this is optional. Configuring CSS classes works the same.
     // COPY_BUTTON_TEXT.success = 'some custom success text';
     // COPY_BUTTON_TEXT.failed = 'some custom failed text';
     copyButtonsSetup();
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
