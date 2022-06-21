@@ -99,7 +99,7 @@ function updateCopyButtonOnFailure(copyButton) {
  */
 function copyButtonsSetup() {
   const copyButtons = document.querySelectorAll(
-      '[data-copy-button="copyButton"]'
+      '[data-copy-button="copyButton"]',
   );
   for (const copyButton of copyButtons) {
     copyButton.addEventListener('click', copyButtonEventHandler);
