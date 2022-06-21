@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Copy buttons example</title>
+</head>
+<body>
+<p id="textToCopy">Here's the text I would like to copy</p>
+<div data-copy-button="copyButton" data-copy-button-target="#textToCopy">Click to copy</div>
+<script type="module">
+    import {COPY_BUTTON_TEXT, copyButtonsSetup} from './copy_buttons.js';
+    // Configuring the success and failure text - this is optional. Configuring CSS classes works the same.
+    // COPY_BUTTON_TEXT.success = 'some custom success text';
+    // COPY_BUTTON_TEXT.failed = 'some custom failed text';
+    copyButtonsSetup();
+</script>
+</body>
+</html>
