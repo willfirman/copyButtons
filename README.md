@@ -35,14 +35,23 @@ dev server) because they use the Clipboard interface.
   innerText you want to copy to the user's clipboard. It should be the target
   element's `id` attribute e.g. `data-copy-button-target="#elementToCopy"`
 
-The module also exports two settings - COPY_BUTTON_TEXT and
-COPY_BUTTON_CLASSES. You can use these to configure the innerText and CSS
+The module also exports two settings - `COPY_BUTTON_TEXT` and
+`COPY_BUTTON_CLASSES`. You can use these to configure the innerText and CSS
 classes that are applied to the copy button after they are clicked.
 They're JavaScript objects, look at the source for how they're structured.
 
+Expanding on the previous example, here's how you can import and change these
+settings before calling `copyButtonsSetup`:
+
+```javascript
+import {copyButtonsSetup, COPY_BUTTON_CLASSES} from './copy_buttons.js';
+COPY_BUTTON_CLASSES.success.add = ['your_css_class', 'css_class_2']
+copyButtonsSetup();
+```
+
 When the button is clicked, it will copy the innerText of some other HTML
 element to the user's clipboard. The button itself will have its innerText
-set to a success/failure message (configurable in the COPY_BUTTON_TEXT
+set to a success/failure message (configurable in the `COPY_BUTTON_TEXT`
 setting, default `'✔ Copied!'` or `'Failed'`).
 
 The Copy buttons will have their CSS classes updated on click. The defaults
@@ -50,4 +59,4 @@ are based on Bootstrap 4 button styling classes and assume your buttons start
 out as `'btn-outline-secondary'`. So on success, `'disabled'` is added. On
 failure, `'btn-outline-secondary'` is removed and `'disabled', 'text-danger',
 'btn-outline-danger'` are added. The classes are configurable using the
-COPY_BUTTON_CLASSES setting.
+`COPY_BUTTON_CLASSES` setting.
